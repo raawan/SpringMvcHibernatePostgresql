@@ -16,11 +16,11 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 		p:location="/WEB-INF/config/jdbc.properties" />
 	 -->
-	<context:component-scan base-package="CounterApp.service" />
+	<context:component-scan base-package="paymentapp.service" />
 	<context:property-placeholder location="/WEB-INF/config/jdbc.properties"/>
 	 	
 	<!-- Hibernate config - start -->
-	<context:component-scan base-package="CounterApp.persistence.*" />
+	<context:component-scan base-package="paymentapp.persistence.*" />
 	
 	 <bean class="java.net.URI" id="dbUrl">
       <constructor-arg value="${DATABASE_URL}" />
@@ -63,7 +63,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>CounterApp.persistence.dto</value>
+				<value>paymentapp.persistence.dto</value>
 			</list>
 		</property>
 	</bean>

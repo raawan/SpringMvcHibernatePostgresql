@@ -1,4 +1,4 @@
-package CounterApp.service;
+package paymentapp.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import CounterApp.persistence.dao.ContactDAO;
-import CounterApp.persistence.dto.Contact;
+import paymentapp.persistence.dao.ContactDAO;
+import paymentapp.persistence.dto.Contact;
 
 
 @Service

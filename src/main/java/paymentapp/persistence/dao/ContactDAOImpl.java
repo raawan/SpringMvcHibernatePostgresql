@@ -1,11 +1,12 @@
-package CounterApp.persistence.dao;
+package paymentapp.persistence.dao;
 
 import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import CounterApp.persistence.dto.Contact;
+import paymentapp.persistence.dto.Contact;
 
 @Repository
 public class ContactDAOImpl implements ContactDAO {

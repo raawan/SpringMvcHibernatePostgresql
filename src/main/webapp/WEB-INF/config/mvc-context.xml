@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 
-	<context:component-scan base-package="CounterApp.controller" />
+	<context:component-scan base-package="paymentapp.controller" />
 
 	<!-- freemarker config start -->
 	<bean id="freemarkerConfig"

@@ -1,4 +1,4 @@
-package CounterApp.persistence.dto;
+package paymentapp.persistence.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

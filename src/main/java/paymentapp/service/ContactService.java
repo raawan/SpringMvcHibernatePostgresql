@@ -1,11 +1,11 @@
-package CounterApp.persistence.dao;
+package paymentapp.service;
 
 import java.util.List;
 
-import CounterApp.persistence.dto.Contact;
+import paymentapp.persistence.dto.Contact;
 
 
-public interface ContactDAO {
+public interface ContactService {
 	
 	public void addContact(Contact contact);
 	public List<Contact> listContact();
