@@ -10,6 +10,19 @@
 		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<!-- Application context reference. -->
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>
+	    	/WEB-INF/config/application-context.xml
+	    </param-value>
+	</context-param>
+	
+	<listener>
+    	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  	</listener>
+  	
 	<!-- Adding spring MVC support -->
 	<servlet>
 		<servlet-name>spring</servlet-name>

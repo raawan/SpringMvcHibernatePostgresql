@@ -16,6 +16,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- General dependencies of a common web app- start -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -25,9 +26,9 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>3.1.0</version>
 		</dependency>
-
+		<!-- General dependencies of a common web app- end -->
 		<!-- Spring web start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -40,8 +41,8 @@
 			<version>4.1.6.RELEASE</version>
 		</dependency>
 		<!-- Spring web end -->
-		
-		<!--  freemarker start -->
+
+		<!-- freemarker start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
@@ -53,7 +54,35 @@
 			<artifactId>freemarker</artifactId>
 			<version>2.3.22</version>
 		</dependency>
-		<!--  freemarker end -->
+		<!-- freemarker end -->
+		<!-- Spring ORM start -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.1.6.RELEASE</version>
+		</dependency>
+		<!-- Spring ORM -->
+		<!-- Hibernate start -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.8.Final</version>
+		</dependency>
+		<!-- HIbernate end -->
+		<!-- Postgresql jdbc driver start -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
+		</dependency>
+		<!-- Postgresql jdbc driver end -->
+		<!-- Connection pooling - start -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		<!-- Connection pooling - end -->
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>CounterWebApp</finalName>
