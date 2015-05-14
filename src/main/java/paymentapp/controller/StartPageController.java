@@ -20,13 +20,13 @@ public class StartPageController {
 	
 	private static int counter = 0;
 	private static final String WELCOME = "welcome";
-	private static final String CURRENT_TIME = "current_time";
+	private static final String NEW_PAYMENT = "new_payment";
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
 		
 		 model.addAttribute("MsTime", System.currentTimeMillis());
-		 
+		/* 
 		 Contact contact = new Contact();
 		 contact.setId(1);
 		 contact.setEmail("mplusf@test.com");
@@ -34,10 +34,16 @@ public class StartPageController {
 		 contact.setLastname("ravan");
 		 contact.setTelephone("987654321");
 		 
-		 contactService.addContact(contact);
+		 contactService.addContact(contact);*/
 
 			
-		return CURRENT_TIME;
+		return NEW_PAYMENT;
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String makePayment(Model model) {
+		
+		return NEW_PAYMENT;
 	}
 	
 	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
