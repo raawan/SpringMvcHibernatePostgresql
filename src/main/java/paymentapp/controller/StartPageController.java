@@ -25,7 +25,7 @@ public class StartPageController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
 		
-		 model.addAttribute("Latest Time==>\n", System.currentTimeMillis());
+		 model.addAttribute("MsTime", System.currentTimeMillis());
 		 
 		 Contact contact = new Contact();
 		 contact.setId(1);
