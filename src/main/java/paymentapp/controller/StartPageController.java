@@ -25,14 +25,14 @@ public class StartPageController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
 		
-		 model.addAttribute("MsTime", System.currentTimeMillis());
+		 model.addAttribute("Latest Time==>\n", System.currentTimeMillis());
 		 
 		 Contact contact = new Contact();
 		 contact.setId(1);
-		 contact.setEmail("minal@test.com");
-		 contact.setFirstname("minal");
-		 contact.setLastname("fulzele");
-		 contact.setTelephone("1234567890");
+		 contact.setEmail("mplusf@test.com");
+		 contact.setFirstname("mahatma");
+		 contact.setLastname("ravan");
+		 contact.setTelephone("987654321");
 		 
 		 contactService.addContact(contact);
 
