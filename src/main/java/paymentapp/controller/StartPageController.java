@@ -21,6 +21,7 @@ public class StartPageController {
 	private static int counter = 0;
 	private static final String WELCOME = "welcome";
 	private static final String NEW_PAYMENT = "new_payment";
+	private static final String PAYEE_DETAILS = "payee_details";
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
@@ -43,7 +44,7 @@ public class StartPageController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String makePayment(Model model) {
 		
-		return NEW_PAYMENT;
+		return PAYEE_DETAILS;
 	}
 	
 	@RequestMapping(value = "/{name}", method = RequestMethod.GET)

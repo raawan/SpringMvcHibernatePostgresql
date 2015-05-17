@@ -1,12 +1,25 @@
-/* Simple CSS Reset*/
 
-* {
-	margin:0;
-	padding: 0;
-	font-weight: normal;
-	font-size: normal;
+.content-text {
+	padding:5%;
+	text-align: center;
+	color: #000099;
+	font-weight: bold;
+	font-size: 4em;
 }
 
-body {
-	font-size: 40px;
+form {
+	margin: auto 5% ;
+	border:none;
+	text-align: center; 
 }
+
+form input[type="submit"] {
+	font-size: 70%;
+	padding: 3% 1%;
+	cursor:pointer;
+	background-color: #66CCFF;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 4em;
+}
+

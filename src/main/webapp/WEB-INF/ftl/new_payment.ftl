@@ -3,28 +3,29 @@
 <html>
 <head>
 	<title>New Payment</title>
-	<link rel="stylesheet" type="text/css" href="<@spring.url '/resources/css/new_payment.css'/>"/>
+	<link rel="stylesheet" type="text/css" href="<@spring.url '/resources/css/new_payment.css'/>" />
+	<link rel="stylesheet" type="text/css" href="<@spring.url '/resources/css/global.css'/>"/>
 </head>
 <body>
-	<div id="header">
-		<p>New Payment</p>
+
+	<div class="header">
+		<p>NEW PAYMENT</p>
 	</div>
-	<div id="container">
-		<p>Pay Anyone who has a U.K. Bank Account with your American Express card</p>
-		<form method="POST">
-			<fieldset>
-				<input type="submit" value="Make A Payment">
-			</fieldset>
+
+	<div class="content">
+		<p class="content-text">Pay anyone who has a U.K. Bank account with your American Express card</p>
+		<form action="" method="POST">
+				<input type="submit" value="Make A Payment">	
 		</form>
 	</div>
-	<div id="footer">
-		<p>
-			<ul>
-				<li>Contact Us</li>
-				<li>Terms And Conditions</li>
-				<li>Legal Disclaimer</li>
-			</ul>
-		</p>
+
+	<div class="footer">
+		<div>
+			<span class="footer-element">Contact Us</span>
+			<span class="footer-element">Terms And Conditions</span>
+			<span class="footer-element">Legal Disclaimer</span>		
+		</div>
 	</div>
+
 </body>
 </html>
