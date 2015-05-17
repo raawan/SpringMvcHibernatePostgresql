@@ -13,7 +13,7 @@ import paymentapp.persistence.dto.Contact;
 import paymentapp.service.ContactService;
 
 @Controller	
-public class StartPageController {
+public class NewPaymentController {
 	
 	@Autowired
 	private ContactService contactService;

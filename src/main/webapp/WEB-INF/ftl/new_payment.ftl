@@ -21,9 +21,9 @@
 
 	<div class="footer">
 		<div>
-			<span class="footer-element">Contact Us</span>
-			<span class="footer-element">Terms And Conditions</span>
-			<span class="footer-element">Legal Disclaimer</span>		
+		
+			<span class="footer-element"><a href="<@spring.url '/contact_us'/>">Contact Us</a></span>
+			<span class="footer-element"><a href="<@spring.url '/tandc'/>">Terms And Conditions</a></span>	
 		</div>
 	</div>
 
