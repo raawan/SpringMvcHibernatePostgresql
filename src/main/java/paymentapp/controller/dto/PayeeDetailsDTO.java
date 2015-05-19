@@ -1,9 +1,14 @@
 package paymentapp.controller.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class PayeeDetailsDTO {
+public class PayeeDetailsDTO implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 24362481094534617L;
 	private String acctholdername;
 	private Integer  amount;
 	private String reference;
