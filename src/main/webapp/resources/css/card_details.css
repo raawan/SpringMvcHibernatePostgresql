@@ -1,26 +1,36 @@
-
-.content-text {
-	padding:5%;
-	text-align: center;
-	color: #000099;
-	font-weight: bold;
-	font-size: 4em;
+.header p {
+	font-size: 0.7em;
 }
 
 form {
-	margin: auto 5% ;
-	border:none;
-	text-align: center; 
+	margin: auto ;
+	margin-top: 2%;
+	width: 40%;
+	font-size: 25px;
+
+
 }
 
+form div label {
+	margin-top: 2%;
+}
+
+form div input, form div textarea {
+	float: right;
+	clear: both;	
+}
+
+	
+
 form input[type="submit"] {
-	font-size: 70%;
+	margin: 0 30% 15% auto;
 	padding: 3% 1%;
 	cursor:pointer;
 	background-color: #66CCFF;
 	font-weight: bold;
 	color: #FFF;
-	font-size: 4em;
+	font-size: 1em;
+
 }
 
 .rounded-corners {

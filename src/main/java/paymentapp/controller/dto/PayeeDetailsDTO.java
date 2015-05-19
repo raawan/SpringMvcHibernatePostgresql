@@ -1,0 +1,66 @@
+package paymentapp.controller.dto;
+
+import java.util.Date;
+
+public class PayeeDetailsDTO {
+	
+	private String acctholdername;
+	private Integer  amount;
+	private String reference;
+	private String bankname;
+	private String bankaddress;
+	private Integer sortcode;
+	private Integer accountnumber;
+	private Date dateofpayment;
+	
+	public String getAcctholdername() {
+		return acctholdername;
+	}
+	public void setAcctholdername(String acctholdername) {
+		this.acctholdername = acctholdername;
+	}
+	
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+	public String getBankname() {
+		return bankname;
+	}
+	public void setBankname(String bankname) {
+		this.bankname = bankname;
+	}
+	public String getBankaddress() {
+		return bankaddress;
+	}
+	public void setBankaddress(String bankaddress) {
+		this.bankaddress = bankaddress;
+	}
+	public Date getDateofpayment() {
+		return dateofpayment;
+	}
+	public void setDateofpayment(Date dateofpayment) {
+		this.dateofpayment = dateofpayment;
+	}
+	public Integer getSortcode() {
+		return sortcode;
+	}
+	public void setSortcode(Integer sortcode) {
+		this.sortcode = sortcode;
+	}
+	public Integer getAmount() {
+		return amount;
+	}
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+	public Integer getAccountnumber() {
+		return accountnumber;
+	}
+	public void setAccountnumber(Integer accountnumber) {
+		this.accountnumber = accountnumber;
+	}
+	
+}

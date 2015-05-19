@@ -15,7 +15,7 @@
 	<div class="content">
 		<p class="content-text">Pay anyone who has a U.K. Bank account with your American Express card</p>
 		<form action="" method="POST">
-				<input type="submit" value="Make A Payment">	
+				<input type="submit" value="Make A Payment" class="rounded-corners">	
 		</form>
 	</div>
 
