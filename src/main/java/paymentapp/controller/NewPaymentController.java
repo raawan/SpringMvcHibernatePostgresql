@@ -44,27 +44,17 @@ public class NewPaymentController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
 		
-		 model.addAttribute("MsTime", System.currentTimeMillis());
-		/* 
-		 Contact contact = new Contact();
-		 contact.setId(1);
-		 contact.setEmail("mplusf@test.com");
-		 contact.setFirstname("mahatma");
-		 contact.setLastname("ravan");
-		 contact.setTelephone("987654321");
-		 
-		 contactService.addContact(contact);*/
-
-		System.out.println("==============================");	
+		model.addAttribute("MsTime", System.currentTimeMillis());
 		return NEW_PAYMENT;
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	public String makePayment(Model model) {
-		//model.addAttribute("payee",new Payee());
+		
 		return PAYEE_DETAILS;
 	}
 	
+	//todo: remove when appropriate
 	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
 	public String welcomeName(@PathVariable String name, ModelMap model) {
  
@@ -82,10 +72,7 @@ public class NewPaymentController {
 	@RequestMapping(value = "/card_details", method = RequestMethod.POST)
 	public String submitPayerCardDetails(@ModelAttribute PayerCardDetailsDTO payercardDTO , @ModelAttribute("sessionPayee") PayeeDetailsDTO payeeDTO) 
 			throws ParseException {
-		System.out.println("-----------------------------");
-		System.out.println(payercardDTO.getEmailaddress());
-		System.out.println(payeeDTO.getBankaddress());
-		System.out.println("-----------------------------");
+	
 		Payee payee = convertPayeeDTOtoPayeeDomainObject(payeeDTO);
 		PayerCard payerCard = convertPayercardDTOtoPayerCardDomainObject(payercardDTO);
 		paymentService.submitPayment(payee, payerCard);
@@ -97,6 +84,7 @@ public class NewPaymentController {
 	 */
 	private PayerCard convertPayercardDTOtoPayerCardDomainObject(
 			PayerCardDetailsDTO payercardDTO) throws ParseException {
+		
 		PayerCard payerCard = new PayerCard();
 		payerCard.setCardNumber(payercardDTO.getCardnumber());
 		payerCard.setEmailAddress(payercardDTO.getEmailaddress());
@@ -111,6 +99,7 @@ public class NewPaymentController {
 	}
 
 	private Payee convertPayeeDTOtoPayeeDomainObject(PayeeDetailsDTO payeeDTO) {
+		
 		Payee payee = new Payee();
 		payee.setAccountHolderName(payeeDTO.getAcctholdername());
 		payee.setAccountNumber(payeeDTO.getAccountnumber());
@@ -120,7 +109,6 @@ public class NewPaymentController {
 		payee.setDateOfPayment(payeeDTO.getDateofpayment());
 		payee.setReference(payeeDTO.getReference());
 		payee.setSortCode(payeeDTO.getSortcode());
-		
 		return payee;
 	}
 

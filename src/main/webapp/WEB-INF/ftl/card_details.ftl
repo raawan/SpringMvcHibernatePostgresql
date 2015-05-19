@@ -35,7 +35,7 @@
 			</div>
 			<br>
 			<div>
-				<label for="emailaddress">Sortcode:</label>
+				<label for="emailaddress">EmailAddress:</label>
 				<input type="text" id="emailaddress" name="emailaddress">
 			</div>
 			<br>
