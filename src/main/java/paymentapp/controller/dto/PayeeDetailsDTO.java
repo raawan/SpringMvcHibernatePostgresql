@@ -1,6 +1,7 @@
 package paymentapp.controller.dto;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class PayeeDetailsDTO implements Serializable {
@@ -10,7 +11,7 @@ public class PayeeDetailsDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 24362481094534617L;
 	private String acctholdername;
-	private Integer  amount;
+	private BigDecimal  amount;
 	private String reference;
 	private String bankname;
 	private String bankaddress;
@@ -55,10 +56,10 @@ public class PayeeDetailsDTO implements Serializable {
 	public void setSortcode(Integer sortcode) {
 		this.sortcode = sortcode;
 	}
-	public Integer getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
-	public void setAmount(Integer amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 	public Integer getAccountnumber() {

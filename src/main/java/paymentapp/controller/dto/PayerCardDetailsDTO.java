@@ -1,5 +1,7 @@
 package paymentapp.controller.dto;
 
+import java.math.BigDecimal;
+
 public class PayerCardDetailsDTO {
 	
 	private String nameoncard;
@@ -7,7 +9,7 @@ public class PayerCardDetailsDTO {
 	private String expirydate;
 	private String cvv;
 	private String emailaddress;
-	private Integer totalcost;
+	private BigDecimal totalcost;
 	
 	public String getNameoncard() {
 		return nameoncard;
@@ -39,10 +41,10 @@ public class PayerCardDetailsDTO {
 	public void setEmailaddress(String emailaddress) {
 		this.emailaddress = emailaddress;
 	}
-	public Integer getTotalcost() {
+	public BigDecimal getTotalcost() {
 		return totalcost;
 	}
-	public void setTotalcost(Integer totalcost) {
+	public void setTotalcost(BigDecimal totalcost) {
 		this.totalcost = totalcost;
 	}
 	

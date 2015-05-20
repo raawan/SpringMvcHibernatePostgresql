@@ -1,5 +1,6 @@
 package paymentapp.persistence.dto;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +43,16 @@ public class Payment {
 	@Column
 	private boolean paymentStatus; //true=success;false=fail
 	
+	@Column
+	private BigDecimal totalAmountCharged;
+	
+	public BigDecimal getTotalAmountCharged() {
+		return totalAmountCharged;
+	}
+
+	public void setTotalAmountCharged(BigDecimal totalAmountCharged) {
+		this.totalAmountCharged = totalAmountCharged;
+	}
 
 	public Integer getId() {
 		return id;

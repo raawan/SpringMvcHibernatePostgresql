@@ -16,49 +16,47 @@
 		<form name = "payee" action="/payee_details" method="POST">
 			<div>
 				<label for="acctholdername">Bank Account Holder's Name :</label>
-				<input type="text" name="acctholdername" id="acctholdername" >
+				<input type="text" name="acctholdername" id="acctholdername" value="${payee.acctholdername!}">
 			</div>
 			<br>
 			<div>
 				<label for="amount">Amount:</label>
-				<input type="text" id="amount" name="amount"   >
+				<input type="text" id="amount" name="amount" value="${payee.amount!}" >
 			</div>
 			<br>
 			<div>
 				<label for="reference">Reference Memo:</label>	
-				<input type="text"  id="reference" name="reference" >
+				<input type="text"  id="reference" name="reference" value="${payee.reference!}">
 			</div>
 			<br>
 			<div>
 				<label for="bankname">Bank Name:</label>
-				<input type="text"  id="bankname" name="bankname">
+				<input type="text"  id="bankname" name="bankname" value="${payee.bankname!}">
 			</div>
 			<br>
 			<div>
 				<label for="bankaddress">Bank Address:</label>
-				<textarea id="bankaddress" name="bankaddress"></textarea>
+				<textarea id="bankaddress" name="bankaddress" value="${payee.bankaddress!}"></textarea>
 			</div>
 			<br>
 			<div>
 				<label for="sortcode">Sortcode:</label>
-				<input type="text"  id="sortcode" name="sortcode">
+				<input type="text"  id="sortcode" name="sortcode" value="${payee.sortcode!}" >
 			</div>
 			<br>
 			<div>
 				<label for="accountnumber">A/C Number:</label>
-				<input type="text"  id="accountnumber" name="accountnumber">
+				<input type="text"  id="accountnumber" name="accountnumber" value="${payee.accountnumber!}" >
 			</div>
 			<br>
 			<div>
 				<label for="dateofpayment">Payment Date:</label>
-				<input type="date" id="dateofpayment" name="dateofpayment">
+				<input type="date" id="dateofpayment" name="dateofpayment" value="${payee.dateofpayment!}" >
 			</div>
 			<br><br>
 			<div>
 				<input type="submit" value="Submit Details"  class="rounded-corners">
 			</div>
-				
-	
 		</form>
 	</div>
 	<div class="footer">

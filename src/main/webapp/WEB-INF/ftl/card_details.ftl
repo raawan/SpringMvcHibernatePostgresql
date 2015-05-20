@@ -16,32 +16,32 @@
 		<form action="/card_details" method="POST">
 			<div>
 				<label for="nameoncard">Name On Card:</label>
-				<input type="text" id="nameoncard" name="nameoncard">
+				<input type="text" id="nameoncard" name="nameoncard" value="${cardDetails.nameoncard!}">
 			</div>
 			<br>
 			<div>
 				<label for="cardnumber">Amount:</label>
-				<input type="text" id="cardnumber" name="cardnumber">
+				<input type="text" id="cardnumber" name="cardnumber" value="${cardDetails.cardnumber!}">
 			</div>
 			<br>
 			<div>
 				<label for="expirydate">Expiry Date (mm/yy):</label>
-				<input type="text" id="expirydate" name="expirydate">
+				<input type="text" id="expirydate" name="expirydate" value="${cardDetails.expirydate!}">
 			</div>
 			<br>
 			<div>
 				<label for="cvv">CVV</label>
-				<input type="text" id="cvv" name="cvv">
+				<input type="text" id="cvv" name="cvv" value="${cardDetails.cvv!}">
 			</div>
 			<br>
 			<div>
 				<label for="emailaddress">EmailAddress:</label>
-				<input type="text" id="emailaddress" name="emailaddress">
+				<input type="text" id="emailaddress" name="emailaddress" value="${cardDetails.emailaddress!}">
 			</div>
 			<br>
 			<div>
 				<label for="totalcost">Total Cost Charged To Your Card:</label>
-				<input type="text" id="totalcost" name="totalcost">
+				<input type="text" id="totalcost" name="totalcost" value="${cardDetails.totalcost!}">
 			</div>
 			<br><br>
 			<div>
