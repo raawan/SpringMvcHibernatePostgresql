@@ -1,20 +1,15 @@
 package paymentapp.persistence.dao;
 
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import paymentapp.persistence.dto.Payee;
 
 @Repository
-public class PayeeDAOImpl implements PayeeDAO {
-	
-	@Autowired
-	private SessionFactory sessionFactory;
+public class PayeeDAOImpl extends GenericDAOImpl<Payee> implements PayeeDAO {
 	
 	@Override
 	public Integer addPayee(Payee payee) {
-		sessionFactory.getCurrentSession().save(payee);
+		this.create(payee);
 		return payee.getId();
 	}
 

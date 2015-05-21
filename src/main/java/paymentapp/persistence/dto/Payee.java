@@ -4,19 +4,17 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="PAYEE")
-public class Payee {
+public class Payee extends GenericDomainObject {
 	
-	@Id
-	@Column(name="PAYEE_ID")
-	@GeneratedValue
-	private Integer id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1770047847708075410L;
 	@Column
 	private String accountHolderName;
 	@Column
@@ -63,12 +61,6 @@ public class Payee {
 		this.accountNumber = accountNumber;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public List<Payment> getPayments() {
 		return payments;
 	}

@@ -23,16 +23,12 @@ import paymentapp.controller.dto.PayeeDetailsDTO;
 import paymentapp.controller.dto.PayerCardDetailsDTO;
 import paymentapp.persistence.dto.Payee;
 import paymentapp.persistence.dto.PayerCard;
-import paymentapp.service.ContactService;
 import paymentapp.service.PaymentService;
 import paymentapp.service.helperobject.PaymentInfo;
 
 @Controller	
 @SessionAttributes({"sessionPayee"})
 public class NewPaymentController {
-	
-	@Autowired
-	private ContactService contactService;
 	
 	@Autowired 
 	private PaymentService  paymentService;

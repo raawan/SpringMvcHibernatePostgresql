@@ -8,8 +8,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
@@ -17,17 +15,13 @@ import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name="PAYMENT")
-public class Payment {
+public class Payment extends GenericDomainObject{
 	
-	public Payment() {
-		
-	}
-	
-	@Id
-	@Column(name="PAYMENT_ID")
-	@GeneratedValue
-	private Integer id;
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5160007725251963944L;
+
 	@ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="PAYMENT_PAYEE", 
                 joinColumns={@JoinColumn(name="PAYMENT_ID")}, 
@@ -61,14 +55,6 @@ public class Payment {
 
 	public void setTotalAmountCharged(BigDecimal totalAmountCharged) {
 		this.totalAmountCharged = totalAmountCharged;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public List<Payee> getPayees() {

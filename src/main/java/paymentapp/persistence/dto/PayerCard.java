@@ -3,21 +3,18 @@ package paymentapp.persistence.dto;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="PAYERCARD")
-public class PayerCard {
+public class PayerCard extends GenericDomainObject{
 	
-	@Id
-	@Column(name="PAYERCARD_ID")
-	@GeneratedValue
-	private Integer id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9222468083005656643L;
 	private String  nameOnCard;
 	private String cardNumber;
 	private Date expiryDate;
@@ -55,11 +52,5 @@ public class PayerCard {
 	}
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
 	}
 }
