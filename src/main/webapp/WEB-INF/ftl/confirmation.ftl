@@ -26,12 +26,12 @@
 			<br>
 			<div>
 				<label for="sortcode">Payee Sortcode:</label>	
-				<input type="text" id="sortcode"  readonly="true" value="${confirmationModel.sortcode?string?replace(",","")}">
+				<input type="text" id="sortcode"  readonly="true" value="${confirmationModel.sortcode!?string?replace(",","")}">
 			</div>
 			<br>
 			<div>
 				<label for="accountnumber">Payee Account:</label>
-				<input type="text" id="accountnumber"  readonly="true" value="${confirmationModel.accountnumber!}">
+				<input type="text" id="accountnumber"  readonly="true" value="${confirmationModel.accountnumber!?string?replace(",","")}">
 			</div>
 			<br>
 			<div>
@@ -41,7 +41,7 @@
 			<br>
 			<div>
 				<label for="paymentdate">Payment Date:</label>
-				<input type="text" id="paymentdate"  readonly="true" value="${confirmationModel.dateofpayment?date}">			</div>
+				<input type="text" id="paymentdate"  readonly="true" value="${confirmationModel.dateofpayment!?date}">			</div>
 			<br><br>
 			<div>
 				<input type="submit" value="Make Payment" class="rounded-corners">

@@ -45,6 +45,7 @@ public class NewPaymentController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
 		
+		
 		return NEW_PAYMENT;
 	}
 	
@@ -88,6 +89,12 @@ public class NewPaymentController {
 		return CONFIRMATION;
 	}
 	
+	@RequestMapping(value = "/confirmation", method = RequestMethod.POST)
+	public String confirmation(Model model) {
+		model.addAttribute("confirmationModel", new ConfirmationDTO());
+		return CONFIRMATION;
+	}
+	
 	private ConfirmationDTO createModelForConfirmationPage(PayeeDetailsDTO payeeDTO,
 			PayerCardDetailsDTO payercardDTO) {
 		
@@ -112,10 +119,6 @@ public class NewPaymentController {
 		return paymentInfo;
 	}
 
-	@RequestMapping(value = "/confirmation", method = RequestMethod.POST)
-	public String confirmation() {
-		return CONFIRMATION;
-	}
 	/*
 	 * ToDo : Use Converters and formatters
 	 */
