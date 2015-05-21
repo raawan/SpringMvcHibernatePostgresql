@@ -1,0 +1,23 @@
+.content {
+	margin: 5% 25%;
+	font-size: 4em;
+	padding: 2% 4%;
+}
+
+form input[type="submit"] {
+	margin: 10% 18% ;
+	padding: 3% 1%;
+	cursor:pointer;
+	background-color: #66CCFF;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 0.5em;
+
+}
+
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}

@@ -7,6 +7,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -37,6 +39,8 @@ public class NewPaymentController {
 	private static final String PAYEE_DETAILS = "payee_details";
 	private static final String CARD_DETAILS = "card_details";
 	private static final String CONFIRMATION = "confirmation";
+	private static final String SAFEKEY = "safekey";
+	private static final String CONGRATULATIONS = "congratulations";
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
@@ -87,9 +91,25 @@ public class NewPaymentController {
 	
 	@RequestMapping(value = "/confirmation", method = RequestMethod.POST)
 	public String confirmation(Model model) {
-		model.addAttribute("confirmationModel", new ConfirmationDTO());
-		return CONFIRMATION;
+		return SAFEKEY;
 	}
+	
+	@RequestMapping(value = "/safekey", method = RequestMethod.POST)
+	public String safeKey(HttpSession session,Model model) {
+		session.invalidate();//Check if its okay to put it in this class where @SessionAttribute anotation is present
+		return CONGRATULATIONS;
+	}
+	
+	@RequestMapping(value = "/congratulations", method = RequestMethod.POST)
+	public String congratulations(Model model) {
+		
+		return "redirect:/";
+	}
+	
+	/*@RequestMapping(value = "/congratulations", method = RequestMethod.GET)
+	public String anotherPayment(Model model) {
+		return NEW_PAYMENT;
+	}*/
 	
 	private ConfirmationDTO createModelForConfirmationPage(PayeeDetailsDTO payeeDTO,
 			PayerCardDetailsDTO payercardDTO) {
