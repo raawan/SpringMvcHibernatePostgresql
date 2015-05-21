@@ -18,12 +18,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import paymentapp.controller.dto.ConfirmationDTO;
 import paymentapp.controller.dto.PayeeDetailsDTO;
 import paymentapp.controller.dto.PayerCardDetailsDTO;
 import paymentapp.persistence.dto.Payee;
 import paymentapp.persistence.dto.PayerCard;
 import paymentapp.service.ContactService;
 import paymentapp.service.PaymentService;
+import paymentapp.service.helperobject.PaymentInfo;
 
 @Controller	
 @SessionAttributes({"sessionPayee"})
@@ -38,6 +40,7 @@ public class NewPaymentController {
 	private static final String NEW_PAYMENT = "new_payment";
 	private static final String PAYEE_DETAILS = "payee_details";
 	private static final String CARD_DETAILS = "card_details";
+	private static final String CONFIRMATION = "confirmation";
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome(Model model) {
@@ -68,17 +71,51 @@ public class NewPaymentController {
 	}
 	
 	@RequestMapping(value = "/card_details", method = RequestMethod.POST)
-	public String submitPayerCardDetails(@ModelAttribute("cardDetailsForm") PayerCardDetailsDTO payercardDTO 
-						, @ModelAttribute("sessionPayee") PayeeDetailsDTO payeeDTO, Model model) 
+	public String submitPayerCardDetails(@ModelAttribute("cardDetailsForm") PayerCardDetailsDTO payercardDTO,
+						 @ModelAttribute("sessionPayee") PayeeDetailsDTO payeeDTO, 
+						 Model model) 
 			throws ParseException {
-		System.out.println("WTF.. is happeing ");
+		
+		//converters and service calls 
 		Payee payee = convertPayeeDTOtoPayeeDomainObject(payeeDTO);
 		PayerCard payerCard = convertPayercardDTOtoPayerCardDomainObject(payercardDTO);
-		paymentService.submitPayment(payee, payerCard);
-		model.addAttribute("cardDetails", payercardDTO);
-		return CARD_DETAILS;
+		PaymentInfo paymentInfo = convertPayeeAndPayerCardToPaymentInfoHelperObject(payeeDTO,payercardDTO);
+		paymentService.submitPayment(payee, payerCard,paymentInfo);
+		
+		//Model and  view 
+		ConfirmationDTO confirmationDTO = createModelForConfirmationPage(payeeDTO, payercardDTO);
+		model.addAttribute("confirmationModel", confirmationDTO);
+		return CONFIRMATION;
 	}
 	
+	private ConfirmationDTO createModelForConfirmationPage(PayeeDetailsDTO payeeDTO,
+			PayerCardDetailsDTO payercardDTO) {
+		
+		ConfirmationDTO confirmationDTO = new ConfirmationDTO();
+		confirmationDTO.setAccountnumber(payeeDTO.getAccountnumber());
+		confirmationDTO.setAmount(payercardDTO.getTotalcost().doubleValue());
+		confirmationDTO.setDateofpayment(payeeDTO.getDateofpayment());
+		confirmationDTO.setNameoncard(payeeDTO.getAcctholdername());
+		confirmationDTO.setReference(payeeDTO.getReference());
+		confirmationDTO.setSortcode(payeeDTO.getSortcode());
+		return confirmationDTO;
+	}
+
+	private PaymentInfo convertPayeeAndPayerCardToPaymentInfoHelperObject(
+			PayeeDetailsDTO payeeDTO, PayerCardDetailsDTO payercardDTO) {
+		
+		PaymentInfo paymentInfo = new PaymentInfo();
+		paymentInfo.setAmount(payeeDTO.getAmount());
+		paymentInfo.setDateOfPayment(payeeDTO.getDateofpayment());
+		paymentInfo.setReference(payeeDTO.getReference());
+		paymentInfo.setTotalAmountCharged(payercardDTO.getTotalcost());
+		return paymentInfo;
+	}
+
+	@RequestMapping(value = "/confirmation", method = RequestMethod.POST)
+	public String confirmation() {
+		return CONFIRMATION;
+	}
 	/*
 	 * ToDo : Use Converters and formatters
 	 */
@@ -105,11 +142,8 @@ public class NewPaymentController {
 		Payee payee = new Payee();
 		payee.setAccountHolderName(payeeDTO.getAcctholdername());
 		payee.setAccountNumber(payeeDTO.getAccountnumber());
-		payee.setAmount(payeeDTO.getAmount());
 		payee.setBankAddress(payeeDTO.getBankaddress());
 		payee.setBankName(payeeDTO.getBankname());
-		payee.setDateOfPayment(payeeDTO.getDateofpayment());
-		payee.setReference(payeeDTO.getReference());
 		payee.setSortCode(payeeDTO.getSortcode());
 		return payee;
 	}

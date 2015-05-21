@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class PayerCardDetailsDTO {
 	
 	private String nameoncard;
-	private Integer cardnumber;
+	private String cardnumber;
 	private String expirydate;
 	private String cvv;
 	private String emailaddress;
@@ -17,10 +17,10 @@ public class PayerCardDetailsDTO {
 	public void setNameoncard(String nameoncard) {
 		this.nameoncard = nameoncard;
 	}
-	public Integer getCardnumber() {
+	public String getCardnumber() {
 		return cardnumber;
 	}
-	public void setCardnumber(Integer cardnumber) {
+	public void setCardnumber(String cardnumber) {
 		this.cardnumber = cardnumber;
 	}
 	public String getExpirydate() {

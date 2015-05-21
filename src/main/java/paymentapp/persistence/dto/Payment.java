@@ -2,6 +2,7 @@ package paymentapp.persistence.dto;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,9 +19,8 @@ import javax.persistence.JoinColumn;
 @Table(name="PAYMENT")
 public class Payment {
 	
-	public Payment(Payee payee, PayerCard payerCard) {
-		payees.add(payee);
-		payerCards.add(payerCard);
+	public Payment() {
+		
 	}
 	
 	@Id
@@ -45,6 +45,15 @@ public class Payment {
 	
 	@Column
 	private BigDecimal totalAmountCharged;
+	
+	@Column
+	private BigDecimal amount;
+	
+	@Column
+	private String reference;
+	
+	@Column
+	private Date dateOfPayment;
 	
 	public BigDecimal getTotalAmountCharged() {
 		return totalAmountCharged;
@@ -85,5 +94,25 @@ public class Payment {
 
 	public void setPaymentStatus(boolean paymentStatus) {
 		this.paymentStatus = paymentStatus;
+	}
+	
+	public BigDecimal getAmount() {
+		return amount;
+	}
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
+	}
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
+	}
+	
+	public Date getDateOfPayment() {
+		return dateOfPayment;
+	}
+	public void setDateOfPayment(Date dateOfPayment) {
+		this.dateOfPayment = dateOfPayment;
 	}
 }

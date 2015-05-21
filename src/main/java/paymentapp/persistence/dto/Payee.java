@@ -1,7 +1,5 @@
 package paymentapp.persistence.dto;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,10 +20,6 @@ public class Payee {
 	@Column
 	private String accountHolderName;
 	@Column
-	private BigDecimal amount;
-	@Column
-	private String reference;
-	@Column
 	private String bankName;
 	@Column
 	private String bankAddress;
@@ -33,8 +27,6 @@ public class Payee {
 	private Integer sortCode;
 	@Column
 	private Integer accountNumber;
-	@Column
-	private Date dateOfPayment;
 	
 	@ManyToMany(mappedBy="payees")
 	private List<Payment> payments;
@@ -45,18 +37,7 @@ public class Payee {
 	public void setAccountHolderName(String accountHolderName) {
 		this.accountHolderName = accountHolderName;
 	}
-	public BigDecimal getAmount() {
-		return amount;
-	}
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
-	public String getReference() {
-		return reference;
-	}
-	public void setReference(String reference) {
-		this.reference = reference;
-	}
+	
 	public String getBankName() {
 		return bankName;
 	}
@@ -81,12 +62,7 @@ public class Payee {
 	public void setAccountNumber(Integer accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	public Date getDateOfPayment() {
-		return dateOfPayment;
-	}
-	public void setDateOfPayment(Date dateOfPayment) {
-		this.dateOfPayment = dateOfPayment;
-	}
+	
 	public Integer getId() {
 		return id;
 	}

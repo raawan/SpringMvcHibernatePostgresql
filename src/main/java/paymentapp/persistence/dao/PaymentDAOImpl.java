@@ -15,6 +15,7 @@ public class PaymentDAOImpl implements PaymentDAO {
 	@Override
 	public Integer addPayment(Payment payment) {
 		sessionFactory.getCurrentSession().save(payment);
+		sessionFactory.getCurrentSession().flush();
 		return payment.getId();
 	}
 

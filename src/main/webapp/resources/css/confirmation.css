@@ -1,0 +1,41 @@
+
+
+form {
+	margin: auto ;
+	margin-top: 2%;
+	width: 40%;
+	font-size: 25px;
+
+
+}
+
+form div label {
+	margin-top: 2%;
+}
+
+form div input, form div textarea {
+	float: right;
+	clear: both;	
+}
+
+form input,form textarea {
+
+}
+
+form input[type="submit"] {
+	margin: 0 30% 15% auto;
+	padding: 3% 1%;
+	cursor:pointer;
+	background-color: #66CCFF;
+	font-weight: bold;
+	color: #FFF;
+	font-size: 1em;
+
+}
+
+.rounded-corners {
+     -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+}

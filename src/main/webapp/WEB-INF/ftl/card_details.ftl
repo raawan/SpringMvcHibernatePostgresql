@@ -20,13 +20,13 @@
 			</div>
 			<br>
 			<div>
-				<label for="cardnumber">Amount:</label>
+				<label for="cardnumber">Card Number:</label>
 				<input type="text" id="cardnumber" name="cardnumber" value="${cardDetails.cardnumber!}">
 			</div>
 			<br>
 			<div>
 				<label for="expirydate">Expiry Date (mm/yy):</label>
-				<input type="text" id="expirydate" name="expirydate" value="${cardDetails.expirydate!}">
+				 <input type="text" id="expirydate" name="expirydate" value="${cardDetails.expirydate!}">
 			</div>
 			<br>
 			<div>
@@ -41,11 +41,11 @@
 			<br>
 			<div>
 				<label for="totalcost">Total Cost Charged To Your Card:</label>
-				<input type="text" id="totalcost" name="totalcost" value="${cardDetails.totalcost!}">
+				<input type="text" id="totalcost" name="totalcost"  readonly="true" value="${cardDetails.totalcost!}">
 			</div>
 			<br><br>
 			<div>
-				<input type="submit" value="Submit Details" class="rounded-corners">
+				<input type="submit" value="Submit Details" class="rounded-corners" >
 			</div>	
 		</form>
 

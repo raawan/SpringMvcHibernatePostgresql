@@ -19,7 +19,7 @@ public class PayerCard {
 	@GeneratedValue
 	private Integer id;
 	private String  nameOnCard;
-	private Integer cardNumber;
+	private String cardNumber;
 	private Date expiryDate;
 	private String emailAddress;
 	
@@ -38,10 +38,10 @@ public class PayerCard {
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
-	public Integer getCardNumber() {
+	public String getCardNumber() {
 		return cardNumber;
 	}
-	public void setCardNumber(Integer cardNumber) {
+	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
 	public Date getExpiryDate() {
